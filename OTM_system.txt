@@ -1,0 +1,12 @@
+@startuml
+left to right direction
+package el-Campus{
+    usecase "アンケートに回答" as UC1
+    usecase "課題をダウンロード" as UC2
+    usecase "お知らせを発行" as UC3
+}
+package UNIVERSAL PASSPORT{
+
+}
+:student: --> UC1
+:student: --> UC2
