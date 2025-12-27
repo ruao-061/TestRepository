@@ -1,0 +1,14 @@
+@startuml
+MainFunction ->Calculate:データを計算する
+activate Calculate
+
+Calculate ->getInput:入力データ要求
+activate getInput
+
+getInput -->Calculate:入力データ
+deactivate getInput
+
+Calculate -->表示:計算結果
+
+
+@enduml

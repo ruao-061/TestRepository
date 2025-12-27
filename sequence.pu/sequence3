@@ -1,0 +1,19 @@
+@startuml
+
+state "オフ" as OFF
+state "オン" as ON
+
+[*] --> OFF
+
+OFF --> ON : スイッチを押す
+OFF --> ON : 周囲が暗くなる
+
+ON --> OFF : スイッチを押す
+ON --> OFF : 一定時間後
+ON --> OFF : 周囲が明るくなる
+
+@enduml
+
+
+
+
