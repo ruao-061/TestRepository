@@ -1,12 +1,27 @@
 @startuml
-left to right direction
-package el-Campus{
-    usecase "アンケートに回答" as UC1
-    usecase "課題をダウンロード" as UC2
-    usecase "お知らせを発行" as UC3
+top to bottom direction
+
+actor "学生"
+actor "教員"
+
+package "UNIVERSAL PASSPORT"{
+    usecase "成績確認" as UC1
+    usecase "履修登録" as UC2
+    usecase "シラバス参照" as UC3
 }
-package UNIVERSAL PASSPORT{
+package "el-Campus"{
+    usecase "課題をダウンロード" as UD1
+    usecase "アンケートに回答" as UD2
+    usecase "お知らせを発行" as UD3
 
 }
-:student: --> UC1
-:student: --> UC2
+:学生: --> UC1
+:学生: --> UC2
+:学生: --> UC3
+:学生: --> UD1
+:学生: --> UD2
+:教員: ..> UC3 
+:教員: ..> UD2
+:教員: ..> UD3
+
+@enduml
