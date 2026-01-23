@@ -1,4 +1,10 @@
 @startuml
+hide footbox
+
+participant MainFunction
+participant Calculate
+participant getInput
+
 MainFunction ->Calculate:データを計算する
 activate Calculate
 
@@ -8,7 +14,11 @@ activate getInput
 getInput -->Calculate:入力データ
 deactivate getInput
 
-Calculate -->表示:計算結果
+Calculate -->MainFunction:計算結果
+deactivate Calculate
 
+note over MainFunction
+表示
+end note
 
 @enduml
